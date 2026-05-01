@@ -1,0 +1,59 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build arinc struct test",
+            "type": "shell",
+            "command": "gcc",
+            "args": [
+                "-Wall",
+                "-Wextra",
+                "-std=c11",
+                "-O2",
+                "${workspaceFolder}/arinc429.c",
+                "${workspaceFolder}/arinc_struct_test.c",
+                "-lm",
+                "-o",
+                "${workspaceFolder}/arinc_struct_test"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "label": "run arinc struct test",
+            "type": "shell",
+            "command": "${workspaceFolder}/arinc_struct_test",
+            "dependsOn": "build arinc struct test",
+            "group": "test"
+        },
+        {
+            "type": "cppbuild",
+            "label": "C/C++: clang сборка активного файла",
+            "command": "/usr/bin/clang",
+            "args": [
+                "-fcolor-diagnostics",
+                "-fansi-escape-codes",
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Задача создана отладчиком."
+        }
+    ]
+}
