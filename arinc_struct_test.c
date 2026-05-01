@@ -213,7 +213,7 @@ int test_roundtrip(void) {
         }
     }
 
-    printf("\n Итого:\n");
+    printf("\n📊 Итого:\n");
     printf("   Критические ошибки: %d\n", critical_failures);
     printf("   Погрешности квантования: %d (НОРМАЛЬНО для ARINC 429)\n", quantization_warnings);
     
